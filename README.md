@@ -1,5 +1,8 @@
 # WSR Login Page
 
+
+![Alt Login_Page]("./src/Images/wsr_loginpage.png")
+
 ## This is a React app that uses MSAL.js to implement a login page for the WSR service.
 
 **Prerequisites**
