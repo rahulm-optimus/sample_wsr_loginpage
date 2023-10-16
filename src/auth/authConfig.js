@@ -1,5 +1,7 @@
 import { LogLevel } from "@azure/msal-browser";
 
+// configuration for msla integration
+
 export const msalConfig = {
   auth: {
     clientId: process.env.REACT_APP_DEV_ID,
