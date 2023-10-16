@@ -9,7 +9,7 @@ const LoginPage = (props) => {
           Welcome to WSR <br />
           <span className={classes.colorText}>Optimus info.</span>
         </p>
-        <Button onClick={props.onClick} btnTheme="btnBlue" >
+        <Button onClick={props.onClick} btnTheme="btnGreen" >
           Sign-In
         </Button>
       </div>
