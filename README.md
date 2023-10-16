@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+WSR Login Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React app that uses MSAL.js to implement a login page for the WSR service.
 
-## Available Scripts
+Prerequisites
 
-In the project directory, you can run:
+Node.js >= 16.13.0
+React >= 17.0.0
+MSAL.js >= 2.0.0
+Installation
 
-### `npm start`
+Clone this repository:
+git clone https://github.com/your-username/wsr-login-page.git
+Install the dependencies:
+npm install
+Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Start the development server:
+npm start
+Open your browser and go to http://localhost:3000
+Configuration
+The MSAL.js configuration is defined in the src/msalConfig.json file. You can update the following values:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+clientId: The ID of your Azure AD application.
+tenantId: The ID of your Azure AD tenant.
+authRedirectUrl: The URL to which users will be redirected after successful authentication.
+MSAL.js integration
+The MSAL.js integration is implemented in the src/components/LoginButton.js component. This component renders a button that users can click to start the authentication flow.
 
-### `npm test`
+Login flow
+When a user clicks the login button, the following steps are performed:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The LoginButton component redirects the user to the Azure AD login page.
+The user enters their credentials and logs in.
+Azure AD redirects the user back to the WSR login page with an access token.
+The LoginButton component validates the access token and logs the user in.
+Signout flow
+To sign out, the user can click the signout button in the header. This will redirect the user to the Azure AD logout page, where they will be logged out.
 
-### `npm run build`
+Deployment
+Once you are ready to deploy your app, you can build it for production:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm run build
+This will create a production build of your app in the build directory. You can then deploy this build to your hosting provider.
